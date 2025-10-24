@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Perfumes</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+
+
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB0zJO-Ks69OjRuxRL_IUkLKa1jPO6QcyQ",
+            authDomain: "produtos-e8e63.firebaseapp.com",
+            projectId: "produtos-e8e63",
+            storageBucket: "produtos-e8e63.firebasestorage.app",
+            messagingSenderId: "1054741695755",
+            appId: "1:1054741695755:web:d0a21570eebea67835e60e",
+            measurementId: "G-PLLSSQYHP1"
+        };
+
+
+        const app = initializeApp(firebaseConfig);
+
+
+        const analytics = getAnalytics(app);
+
+
+        const db = getFirestore(app);
+
+
+        window.db = db;
+        window.getDocs = getDocs;
+        window.collection = collection;
+
+    </script>
+
+    <title>Catálogo de Perfumes - Ivanete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Catálogo de Perfumes</h1>
+        <h3>Os melhores produtos Natura e O Boticário. </h2>
+            <p>Escolha os seus produtos do Catalogo abaixo e confirme no botão ao lado para finalizar o pedido via
+                WhatsApp.</p>
+    </header>
+
+    <main>
+        <h2>Nossos Produtos</h2>
+
+        <div class="filtros">
+            <button class="btn-filtro ativo" onclick="filtrarProdutos('Todos')">Todos</button>
+            <button class="btn-filtro" onclick="filtrarProdutos('Natura')">Natura</button>
+            <button class="btn-filtro" onclick="filtrarProdutos('O Boticário')">O Boticário</button>
+        </div>
+
+        <div id="lista-produtos" class="produtos-container">
+
+            <div class="produto-card">
+
+
+            </div>
+    </main>
+
+    <aside class="carrinho">
+        <h2>Meu Pedido</h2>
+        <div id="itens-carrinho">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+        <div class="total-carrinho">
+            <strong>Total: R$ <span id="valor-total">0.00</span></strong>
+        </div>
+        <button id="finalizar-pedido" class="btn-whatsapp">Finalizar Pedido via WhatsApp</button>
+    </aside>
+
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>

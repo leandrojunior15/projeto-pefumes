@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+*{
+    color: #2D3748;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body { 
+    background-color: #F4F4F4;
+}
+
+h1, h2{
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    font-family: 'Nunito-sans', sans-serif;
+    font-weight: 400; 
+}
+
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.produto-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minimax(320px, 1fr));
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    
+    flex-basis: 200px; 
+    flex-grow: 1; 
+}
+
+.produto-card img { 
+    max-width: 200px;
+    max-height: 200px;  
+    margin: 0px auto;
+    
+}
+
+.produto-card p {
+    font-weight: 540;
+}
+
+.btn-adicionar, .btn-whatsapp { 
+    background-color: #25D366; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    cursor: pointer; 
+    width: 100%; 
+    margin-top: 10px; 
+    font-size: 15px;
+}
+
+.btn-adicionar:hover{
+    background-color: rgb(11, 192, 11);
+}
+
+/* css do botao filtros */
+.filtros {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-filtro {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+
+.btn-filtro.ativo {
+  background-color: #2D3748; 
+  color: white;
+  border-color: #2D3748;
+}
+
+.btn-filtro:hover {
+  background-color: #ddd;
+}
+
+.btn-filtro.ativo:hover {
+  background-color: #1C2636;
+}
+
+
+.btn-remover {
+    background-color: #ff4d4d; 
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.btn-remover:hover {
+    background-color: #cc0000;
+}
+
+
+
+.item-no-carrinho {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.carrinho { 
+    position: fixed; 
+    right: 20px; 
+    top: 20px; 
+    width: 350px; 
+    background: #F4F4F4; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+}
+
+
+/* Para telas com largura máxima de 768px (tablets e celulares) */
+@media (max-width: 1210px) {
+    
+    main {
+        /* Reduz o espaçamento lateral em telas menores */
+        padding: 0 15px;
+    }
+
+    .carrinho {
+        /* Em vez de fixo na lateral, fazemos ocupar a largura toda em baixo ou em cima */
+        position: static; /* Remove a posição fixa */
+        width: 100%;      /* Ocupa toda a largura */
+        margin-top: 30px; /* Adiciona um espaço acima */
+        right: 0;         /* Zera propriedades antigas */
+        top: 0;
+        box-sizing: border-box; 
+    }
+}
+
+
+/* Para telas com largura máxima de 480px (celulares menores) */
+@media (max-width: 480px) {
+    .produtos-container {
+        /* Força os itens a ficarem um embaixo do outro */
+        flex-direction: column;
+    }
+    
+    .produto-card {
+        /* Garante que o card ocupe uma largura agradável */
+        width: 100%;
+        max-width: 200px; /* Evita que fique largo demais */
+        margin: 0 auto; /* Centraliza o card */
+    }
+
+    h1 {
+        font-size: 24px; /* Diminui um pouco o tamanho do título principal */
+    }
+
+    
+}
