@@ -16,6 +16,7 @@
 
 body { 
     background-color: #F4F4F4;
+    box-sizing: border-box;
 }
 
 h1, h2{
@@ -74,7 +75,7 @@ p {
     background-color: rgb(11, 192, 11);
 }
 
-/* css do botao filtros */
+
 .filtros {
   margin-bottom: 20px;
   display: flex;
@@ -106,6 +107,18 @@ p {
   background-color: #1C2636;
 }
 
+.pesquisa-container {
+    margin-bottom: 20px;
+}
+
+#barra-pesquisa {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; 
+}
 
 .btn-remover {
     background-color: #ff4d4d; 
@@ -147,42 +160,39 @@ p {
 }
 
 
-/* Para telas com largura máxima de 768px (tablets e celulares) */
+
 @media (max-width: 1210px) {
     
     main {
-        /* Reduz o espaçamento lateral em telas menores */
+        
         padding: 0 15px;
     }
 
     .carrinho {
-        /* Em vez de fixo na lateral, fazemos ocupar a largura toda em baixo ou em cima */
-        position: static; /* Remove a posição fixa */
-        width: 100%;      /* Ocupa toda a largura */
-        margin-top: 30px; /* Adiciona um espaço acima */
-        right: 0;         /* Zera propriedades antigas */
+        position: static; 
+        width: 100%;      
+        margin-top: 30px; 
+        right: 0;         
         top: 0;
         box-sizing: border-box; 
     }
 }
 
 
-/* Para telas com largura máxima de 480px (celulares menores) */
 @media (max-width: 480px) {
     .produtos-container {
-        /* Força os itens a ficarem um embaixo do outro */
         flex-direction: column;
     }
     
     .produto-card {
-        /* Garante que o card ocupe uma largura agradável */
+        
         width: 100%;
-        max-width: 200px; /* Evita que fique largo demais */
-        margin: 0 auto; /* Centraliza o card */
+        max-width: 300px; 
+        margin: 0 auto; 
     }
 
     h1 {
-        font-size: 24px; /* Diminui um pouco o tamanho do título principal */
+        font-size: 24px; 
     }
 
     
